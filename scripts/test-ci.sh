@@ -47,12 +47,15 @@ check_mise() {
 
 check_port_selector() {
 	local output
+	local port
 
 	if ! output="$(mise exec -- port-selector --name ci-smoke 2>&1)"; then
 		fail "port-selector returns a free port" "$output"
 	fi
 
-	if ! printf '%s' "$output" | tr -d '[:space:]' | grep -Eq '^[0-9]+$'; then
+	port="$(printf '%s\n' "$output" | awk '/^[[:space:]]*[0-9]+[[:space:]]*$/ { gsub(/[[:space:]]/, "", $0); port=$0 } END { print port }')"
+
+	if [ -z "$port" ]; then
 		fail "port-selector returns a free port" "$output"
 	fi
 

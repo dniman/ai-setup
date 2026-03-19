@@ -123,6 +123,7 @@ check_json_command() {
 
 check_port_selector() {
 	local output
+	local port
 
 	if ! command_exists port-selector; then
 		fail "port-selector installed"
@@ -130,7 +131,8 @@ check_port_selector() {
 	fi
 
 	if output="$(port-selector --name setup-check 2>&1)"; then
-		if printf '%s' "$output" | tr -d '[:space:]' | grep -Eq '^[0-9]+$'; then
+		port="$(printf '%s\n' "$output" | awk '/^[[:space:]]*[0-9]+[[:space:]]*$/ { gsub(/[[:space:]]/, "", $0); port=$0 } END { print port }')"
+		if [ -n "$port" ]; then
 			ok "port-selector returns a free port"
 			port-selector --forget --name setup-check >/dev/null 2>&1 || true
 			return 0
