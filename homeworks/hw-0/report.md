@@ -16,8 +16,22 @@
 5. Попросил агента открыть файл /Users/dniman/Projects/ai/to/homeworks/hw-0/report.md в Obsidian. Он написал, файл открыт в Obsidian( ответ получил "файл открыт в Obsidian"), но на деле ничего не произошло. Obsidian работает только со своим хранилищем, команда не возвратила ошибку
 Решил попробовать открыть файл в mate и все отработало как надо.
 
-В чате я задал вопрос "Я правильно понимаю, что на этом этапе еще не нужно генерировать rails проект?" 
+Запуск prompt.md
 
-Сгенерировал новый rails проект rails new test_ops
-_
+Вот что было исправлено:
+  config/routes.rb
+  - get "home/index" → get "/home", to: "home#index", as: :home
+  - Теперь маршрут /home существует и имеет хелпер home_path
+
+  app/controllers/application_controller.rb
+  - Добавлен after_sign_in_path_for — Devise теперь редиректит на /home после логина
+
+  Что уже было корректно:
+  - HomeController — before_action :authenticate_user! стоит, защита работает
+  - root "home#index" — при попытке зайти на / неавторизованный пользователь тоже получит редирект на логин
+  - Devise views для sessions есть, регистрация отключена через skip: [:registrations]
+
+  Сценарий работы:
+  1. Пользователь заходит на /home → редирект на /users/sign_in
+  2. Вводит test@example.com / password123 → редирект на /home
 

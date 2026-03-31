@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "home/index"
+  get "/home", to: "home#index", as: :home
   devise_for :users, skip: [:registrations]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
