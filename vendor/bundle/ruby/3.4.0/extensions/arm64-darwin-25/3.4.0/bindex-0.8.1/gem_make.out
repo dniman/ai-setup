@@ -1,0 +1,18 @@
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/dniman/.local/share/mise/installs/ruby/3.4.8/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260413-40693-ynfhc4 sitelibdir\=./.gem.20260413-40693-ynfhc4 clean
+
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260413-40693-ynfhc4 sitelibdir\=./.gem.20260413-40693-ynfhc4
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260413-40693-ynfhc4 sitelibdir\=./.gem.20260413-40693-ynfhc4 install
+/opt/homebrew/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20260413-40693-ynfhc4/skiptrace/internal
+
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20260413-40693-ynfhc4 sitelibdir\=./.gem.20260413-40693-ynfhc4 clean

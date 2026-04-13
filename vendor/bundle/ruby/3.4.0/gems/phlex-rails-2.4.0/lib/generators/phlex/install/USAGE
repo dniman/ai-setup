@@ -1,0 +1,10 @@
+Description:
+  Installs Phlex
+
+Example:
+  rails generate phlex:install
+
+This will create:
+  app/views/base.rb
+  app/components/base.rb
+	app/initializers/phlex.rb

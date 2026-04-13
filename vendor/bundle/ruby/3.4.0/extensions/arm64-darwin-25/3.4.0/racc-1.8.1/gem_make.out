@@ -1,0 +1,18 @@
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/dniman/.local/share/mise/installs/ruby/3.4.8/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260413-40693-cows5z sitelibdir\=./.gem.20260413-40693-cows5z clean
+
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260413-40693-cows5z sitelibdir\=./.gem.20260413-40693-cows5z
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260413-40693-cows5z sitelibdir\=./.gem.20260413-40693-cows5z install
+/opt/homebrew/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20260413-40693-cows5z/racc
+
+current directory: /Users/dniman/Projects/ai/testops/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260413-40693-cows5z sitelibdir\=./.gem.20260413-40693-cows5z clean
