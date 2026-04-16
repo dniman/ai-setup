@@ -1,46 +1,48 @@
-See PROJECT.md for project description.
+Описание проекта — см. PROJECT.md.
+Полный процесс SDD — см. docs/workflow.md.
 
-## Stack
+## Стек
 Ruby on Rails 8.1.3, PostgreSQL, RSpec
-Phlex via phlex-rails for views and layouts
-Superform for forms
+Phlex через phlex-rails для вью и лейаутов
+Superform для форм
 
-## Key commands
+## Ключевые команды
 - `bin/setup` — bootstrap
-- `bin/rails s` — run server
-- `bundle exec rspec` — run tests
-- `bin/rails db:migrate` — migrate
+- `bin/rails s` — запуск сервера
+- `bundle exec rspec` — запуск тестов
+- `bin/rails db:migrate` — миграции
 
 ## Workflow (SDD)
-One cycle per feature. Never proceed to next step without explicit approval.
+Один цикл = одна фича. Запрещено переходить к следующему этапу без явного подтверждения готовности текущего.
+Полные детали, уровни важности и критерии завершения — в docs/workflow.md.
 
-1. **Brief** — from GitHub issue, 1-2 paragraphs max
-2. **Brief Review** — check clarity, gaps, scope
-3. **Spec** — generate from approved brief
-4. **Spec Review** — run `/spec-reviewer:spec-review`, fix critical/high issues
-5. **Implementation Plan** — generate from approved spec, list any new gems needed
-6. **Plan Review** — check completeness, edge cases
-7. **Implementation** — execute step by step
+1. **Бриф** — из GitHub issue, копируется в `brief.md` (см. Документация)
+2. **Ревью брифа** — ясность, пробелы, границы
+3. **Спецификация** — на основе утверждённого брифа
+4. **Ревью спецификации** — запуск `/spec-reviewer:spec-review`, исправление критических и высоких замечаний
+5. **План реализации** — на основе утверждённой спецификации; включает тестовую стратегию
+6. **Ревью плана** — полнота, edge cases, тестовая стратегия
+7. **Реализация** — пошаговое выполнение
+8. **Приёмка** — проверка критериев приёмки, прогон полного тестового набора, формирование PR, явное закрытие цикла после мержа
 
-## Views & Components
-- No .erb files — use Phlex components only
-- Layouts: `app/views/layouts/` as Phlex classes
-- Components: `app/views/components/`
-- Naming: `Users::IndexView`, `Users::ShowView`, etc.
-- Forms: Superform only, no form_with / form_for
+## Вью и компоненты
+- Никаких .erb — только Phlex-компоненты
+- Лейауты: `app/views/layouts/` как классы Phlex
+- Компоненты: `app/views/components/`
+- Именование: `Users::IndexView`, `Users::ShowView` и т.д.
+- Формы: только Superform, без form_with / form_for
 
-## Documentation
-Store all SDD artifacts in git alongside code:
-- `docs/features/<id>-<name>/brief.md`
-- `docs/features/<id>-<name>/spec.md`
-- `docs/features/<id>-<name>/plan.md`
+## Документация
+Артефакты SDD живут в git рядом с кодом. GitHub issue запускает цикл;
+`brief.md` — источник истины по фиче.
+- `docs/features/<id>-<n>/brief.md`
+- `docs/features/<id>-<n>/spec.md`
+- `docs/features/<id>-<n>/plan.md`
 
-## Conventions
-- Standard Rails MVC, no service objects yet
-- RSpec for tests, FactoryBot for fixtures
-- No new gems without explicit request (gems are agreed at Plan step)
+## Соглашения
+- Стандартный Rails MVC, пока без service objects
+- RSpec для тестов, FactoryBot для фикстур
+- Новые гемы предлагаются на этапе плана и требуют явного одобрения до реализации
 
-## Constraints
-- Don't touch existing migrations
-- Don't implement auth
-- Don't create .erb files
+## Ограничения
+- Не трогать существующие миграции
