@@ -85,6 +85,7 @@ GEM
       logger
     ast (2.4.3)
     base64 (0.3.0)
+    bcrypt (3.1.22)
     bcrypt_pbkdf (1.1.2)
     bigdecimal (4.1.1)
     bindex (0.8.1)
@@ -449,6 +450,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   ancestry
+  bcrypt (~> 3.1.7)
   bootsnap
   brakeman
   bundler-audit
