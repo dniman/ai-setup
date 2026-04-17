@@ -2,9 +2,7 @@
 
 module Views
   module Sessions
-    class NewView < Phlex::HTML
-      include Phlex::Rails::Helpers::Routes
-
+    class NewView < Views::Base
       def initialize(flash: {})
         @flash = flash
       end

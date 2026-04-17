@@ -2,9 +2,7 @@
 
 module Views
   module Passwords
-    class EditView < Phlex::HTML
-      include Phlex::Rails::Helpers::Routes
-
+    class EditView < Views::Base
       def initialize(user:, token:)
         @user = user
         @token = token
