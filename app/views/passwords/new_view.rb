@@ -2,9 +2,7 @@
 
 module Views
   module Passwords
-    class NewView < Phlex::HTML
-      include Phlex::Rails::Helpers::Routes
-
+    class NewView < Views::Base
       def view_template
         render ResetForm.new(
           User.new,

@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
 module Views
-end
-
-module Components
-  extend Phlex::Kit
+  module Components
+    extend Phlex::Kit
+  end
 end
 
 Rails.autoloaders.main.push_dir(
